@@ -172,7 +172,7 @@ public class Example {
                     .getLocation()
                     .getPath())
                     .getName();
-            System.out.printf("Usage: java -jar %s <sample.msg>%n", jarName);
+            System.out.printf("Usage: java -jar %s <sample.msg>\n", jarName);
         } else {
             System.out.printf("Parsing file %s", args[0]);
             new Example().parse(args[0]);

@@ -42,7 +42,7 @@ public class Attachment extends Common {
 
     private static final int CHUNK_SIZE = 8192;
 
-   private static  final Logger logger = LoggerFactory.getLogger(Attachment.class);
+    private static final Logger logger = LoggerFactory.getLogger(Attachment.class);
 
     public Attachment(DirectoryEntry data) {
         super(data, OFFSET_ATT);
@@ -72,7 +72,7 @@ public class Attachment extends Common {
                     stream.write(chunk, 0, bytesRead);
                 }
             } catch (Exception e) {
-                logger.error("An error occurreds while writing the file.", e);
+                logger.error("An error occurred while writing the file.", e);
             }
         }
     }
