@@ -29,7 +29,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.FileNotFoundException;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 
 import static yamp.msg.Msg.PROPERTIES;
 import static yamp.msg.Msg.STREAM;
@@ -38,10 +41,8 @@ import static yamp.msg.util.Utils.copyBytes;
 public class Properties {
 
     private static final Logger logger = LoggerFactory.getLogger(Properties.class);
-
-    private final Map<String, Property> properties = new HashMap<>();
     protected final DirectoryEntry data;
-
+    private final Map<String, Property> properties = new HashMap<>();
     private Set<String> entries = new TreeSet<>();
     private Header header;
 

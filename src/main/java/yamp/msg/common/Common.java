@@ -33,8 +33,8 @@ import java.util.Date;
 import java.util.Set;
 
 import static java.nio.charset.StandardCharsets.UTF_16LE;
-import static yamp.msg.util.Utils.ifNullBytes;
 import static yamp.msg.util.Utils.ifNull;
+import static yamp.msg.util.Utils.ifNullBytes;
 
 public abstract class Common extends Properties {
 

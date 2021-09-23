@@ -27,15 +27,15 @@ import org.apache.poi.poifs.filesystem.Entry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import yamp.MsgParser;
-import yamp.msg.common.Common;
 import yamp.msg.Msg;
+import yamp.msg.common.Common;
 
 import java.io.FileOutputStream;
 
-import static yamp.msg.mapi.Tag.*;
-import static yamp.msg.mapi.Typ.*;
 import static yamp.msg.Msg.MESSAGE_RFC822;
 import static yamp.msg.Msg.OFFSET_ATT;
+import static yamp.msg.mapi.Tag.*;
+import static yamp.msg.mapi.Typ.*;
 import static yamp.msg.util.Utils.nvl;
 
 public class Attachment extends Common {

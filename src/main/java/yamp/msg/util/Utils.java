@@ -24,11 +24,6 @@ import java.util.Arrays;
 import java.util.function.Function;
 
 public class Utils {
-    @FunctionalInterface
-    public interface ByteArrayFunction<R> {
-        R apply(byte[] param);
-    }
-
     public static byte[] copyBytes(byte[] original, int from, int to) {
         return Arrays.copyOfRange(original, from, to);
     }
@@ -43,5 +38,10 @@ public class Utils {
 
     public static <T> T nvl(T param1, T param2) {
         return (param1 == null) ? param2 : param1;
+    }
+
+    @FunctionalInterface
+    public interface ByteArrayFunction<R> {
+        R apply(byte[] param);
     }
 }

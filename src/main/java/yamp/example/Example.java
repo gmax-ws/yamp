@@ -52,6 +52,20 @@ public class Example {
     public Example() {
     }
 
+    public static void main(String[] args) {
+        if (args.length == 0) {
+            String jarName = new File(Example.class.getProtectionDomain()
+                    .getCodeSource()
+                    .getLocation()
+                    .getPath())
+                    .getName();
+            System.out.printf("Usage: java -jar %s <sample.msg>\n", jarName);
+        } else {
+            System.out.printf("Parsing file %s", args[0]);
+            new Example().parse(args[0]);
+        }
+    }
+
     private void toJson(Msg msg) {
         JsonMsg json = new JsonMsg();
 
@@ -163,19 +177,5 @@ public class Example {
         jsonFileName = fileName + ".json";
         Msg msg = MsgParser.newInstance().parse(fileName);
         toJson(msg);
-    }
-
-    public static void main(String[] args) {
-        if (args.length == 0) {
-            String jarName = new File(Example.class.getProtectionDomain()
-                    .getCodeSource()
-                    .getLocation()
-                    .getPath())
-                    .getName();
-            System.out.printf("Usage: java -jar %s <sample.msg>\n", jarName);
-        } else {
-            System.out.printf("Parsing file %s", args[0]);
-            new Example().parse(args[0]);
-        }
     }
 }

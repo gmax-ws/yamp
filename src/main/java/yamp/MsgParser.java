@@ -50,6 +50,10 @@ public class MsgParser {
     private MsgParser() {
     }
 
+    public static MsgParser newInstance() {
+        return new MsgParser();
+    }
+
     private Map<String, DirectoryEntry> filterByKey(String filter) {
         return folders.entrySet().stream()
                 .filter(e -> e.getKey().startsWith(filter))
@@ -98,9 +102,5 @@ public class MsgParser {
                 getRecipients(),
                 getAttachments(),
                 getNameId());
-    }
-
-    public static MsgParser newInstance() {
-        return new MsgParser();
     }
 }

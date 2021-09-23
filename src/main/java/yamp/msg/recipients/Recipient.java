@@ -23,9 +23,9 @@ package yamp.msg.recipients;
 import org.apache.poi.poifs.filesystem.DirectoryEntry;
 import yamp.msg.common.Common;
 
+import static yamp.msg.Msg.OFFSET_REC;
 import static yamp.msg.mapi.Tag.*;
 import static yamp.msg.mapi.Typ.PtypString;
-import static yamp.msg.Msg.OFFSET_REC;
 
 public class Recipient extends Common {
 

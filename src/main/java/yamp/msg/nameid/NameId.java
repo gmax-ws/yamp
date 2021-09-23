@@ -32,9 +32,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.zip.CRC32;
 
+import static yamp.msg.Msg.STREAM;
 import static yamp.msg.mapi.Tag.*;
 import static yamp.msg.mapi.Typ.PtypBinary;
-import static yamp.msg.Msg.STREAM;
 import static yamp.msg.util.Utils.copyBytes;
 
 /**
@@ -42,21 +42,13 @@ import static yamp.msg.util.Utils.copyBytes;
  */
 public class NameId extends Common {
 
-    private static final Logger logger = LoggerFactory.getLogger(NameId.class);
-
     public static final int NUMERICAL_NAMED_PROPERTY = 0;
     public static final int STRING_NAMED_PROPERTY = 1;
     public static final int BASE_STREAM_ID = 0x1000;
     public static final int MIN_ID = 0x8000;
     public static final int MAX_ID = 0xFFFE;
     public static final int MIN_GUID = 3;
-
-    static class NamedPropertyData {
-        List<ClassID> guids = new LinkedList<>();
-        List<NameIdEntry> entries = new ArrayList<>();
-        byte[] string;
-    }
-
+    private static final Logger logger = LoggerFactory.getLogger(NameId.class);
     private final NamedPropertyData npd = new NamedPropertyData();
 
     public NameId(DirectoryEntry data, int offset) {
@@ -171,5 +163,11 @@ public class NameId extends Common {
 
     public int getNumEntries() {
         return npd.entries.size();
+    }
+
+    static class NamedPropertyData {
+        List<ClassID> guids = new LinkedList<>();
+        List<NameIdEntry> entries = new ArrayList<>();
+        byte[] string;
     }
 }
