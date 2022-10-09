@@ -21,7 +21,6 @@
 package yamp.msg.common;
 
 import org.apache.poi.poifs.filesystem.DirectoryEntry;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.Iterator;
 import java.util.Map;
@@ -47,7 +46,6 @@ public abstract class AbstractContainer<T> implements Iterator<T>, Iterable<T> {
     }
 
     @Override
-    @NotNull
     public Iterator<T> iterator() {
         return this;
     }
